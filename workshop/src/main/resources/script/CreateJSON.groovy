@@ -2,6 +2,7 @@ import com.sap.gateway.ip.core.customdev.util.Message
 import groovy.json.JsonBuilder
 
 def Message processData(Message message) {
+    //What's the difference between XmlSlurper and XmlParser?
     def xml = new XmlSlurper().parse(message.getBody(Reader))
 
     def items = []
