@@ -4,8 +4,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.glencore.zinc</groupId>
-        <artifactId>glencore-zinc-cpi</artifactId>
+        <groupId>com.groovy.template</groupId>
+        <artifactId>groovy-template</artifactId>
         <version>1.x.x</version>
     </parent>
 
