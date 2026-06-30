@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu cafe="The Daily Grind">
+    <category name="Hot Drinks">
+        <item id="HD-01">
+            <name>Espresso</name>
+            <description>Strong and bold single shot</description>
+            <sizes>
+                <size name="Small"  price="3.50"/>
+                <size name="Medium" price="4.00"/>
+            </sizes>
+        </item>
+        <item id="HD-02">
+            <name>Latte</name>
+            <description>Espresso with velvety steamed milk</description>
+            <sizes>
+                <size name="Medium" price="4.50"/>
+                <size name="Large"  price="5.50"/>
+            </sizes>
+        </item>
+        <item id="HD-03">
+            <name>Cappuccino</name>
+            <description>Espresso topped with thick foam</description>
+            <sizes>
+                <size name="Small"  price="3.75"/>
+                <size name="Medium" price="4.25"/>
+            </sizes>
+        </item>
+    </category>
+    <category name="Cold Drinks">
+        <item id="CD-01">
+            <name>Iced Coffee</name>
+            <description>Chilled brew poured over ice</description>
+            <sizes>
+                <size name="Medium" price="4.00"/>
+                <size name="Large"  price="5.00"/>
+            </sizes>
+        </item>
+        <item id="CD-02">
+            <name>Frappuccino</name>
+            <description>Blended ice coffee with whipped cream</description>
+            <sizes>
+                <size name="Large"  price="6.00"/>
+            </sizes>
+        </item>
+    </category>
+</menu>

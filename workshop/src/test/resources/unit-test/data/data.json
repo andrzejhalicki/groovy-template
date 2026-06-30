@@ -1,0 +1,11 @@
+{
+    "coffeeshop": {
+        "name": "The Daily Grind",
+        "date": "2024-01-15",
+        "orders": [
+            { "id": "1", "customer": "Alice", "drink": "Espresso",   "size": "Small",  "price": 3.50 },
+            { "id": "2", "customer": "Bob",   "drink": "Latte",      "size": "Large",  "price": 5.50 },
+            { "id": "3", "customer": "Carol", "drink": "Cappuccino", "size": "Medium", "price": 4.25 }
+        ]
+    }
+}

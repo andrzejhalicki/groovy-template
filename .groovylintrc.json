@@ -1,0 +1,14 @@
+{
+    "extends": "recommended",
+    "rules": {
+        "NoDef": {
+            "enabled": false
+        },
+        "VariableTypeRequired": {
+            "enabled": false
+        },
+        "CompileStatic": {
+            "enabled": false
+        }
+    }
+}
