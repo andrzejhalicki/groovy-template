@@ -1,5 +1,6 @@
 import com.sap.gateway.ip.core.customdev.util.Message
 import groovy.json.JsonBuilder
+import groovy.json.JsonOutput
 
 def Message processData(Message message) {
     //What's the difference between XmlSlurper and XmlParser?
@@ -25,6 +26,6 @@ def Message processData(Message message) {
         menu items
     }
 
-    message.setBody(builder.toPrettyString())
+    message.setBody(JsonOutput.prettyPrint(builder.toString()))
     return message
 }

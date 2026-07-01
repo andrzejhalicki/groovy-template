@@ -38,9 +38,10 @@ class CreateXMLSpec extends Specification {
 
         when: 'the script transforms the JSON'
         script.processData(msg)
+        exchange.getIn().setBody(msg.getBody())
 
         then: 'output is XML with 3 order elements and the cafe attribute'
-        def root = new XmlSlurper().parseText(msg.getBody() as String)
+        def root = new XmlSlurper().parse(msg.getBody(InputStream))
         root.name() == 'orders'
         root.@cafe == 'The Daily Grind'
         root.order.size() == 3
@@ -52,9 +53,10 @@ class CreateXMLSpec extends Specification {
 
         when:
         script.processData(msg)
+        exchange.getIn().setBody(msg.getBody())
 
         then: '3.50 + 5.50 + 4.25 = 13.25'
-        def root = new XmlSlurper().parseText(msg.getBody() as String)
+        def root = new XmlSlurper().parse(msg.getBody(InputStream))
         root.@total.toDouble() == 13.25
     }
 
@@ -68,9 +70,10 @@ class CreateXMLSpec extends Specification {
         given:
         setBody(this.getClass().getResource('/unit-test/data/data.json').newInputStream())
         script.processData(msg)
+        exchange.getIn().setBody(msg.getBody())
 
         when: 'parsed with XmlParser'
-        Node root = new XmlParser().parseText(msg.getBody() as String)
+        Node root = new XmlParser().parse(msg.getBody(InputStream))
 
         then:
         root.name() == 'orders'
@@ -97,9 +100,10 @@ class CreateXMLSpec extends Specification {
         given:
         setBody(this.getClass().getResource('/unit-test/data/data.json').newInputStream())
         script.processData(msg)
+        exchange.getIn().setBody(msg.getBody())
 
         when: 'parsed with XmlSlurper'
-        def root = new XmlSlurper().parseText(msg.getBody() as String)
+        def root = new XmlSlurper().parse(msg.getBody(InputStream))
 
         then:
         root.name() == 'orders'

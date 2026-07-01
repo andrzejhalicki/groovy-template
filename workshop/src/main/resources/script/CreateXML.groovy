@@ -12,6 +12,10 @@ def Message processData(Message message) {
     def writer = new OutputStreamWriter(outputStream, 'UTF-8')
     def builder = new MarkupBuilder(writer)
 
+    //Produces compact, single-line XML
+    //def indentPrinter = new IndentPrinter(new BufferedWriter(new OutputStreamWriter(outputStream, 'UTF-8')), '', false)
+    //MarkupBuilder builder = new MarkupBuilder(indentPrinter)
+
     // TODO: add total as an attribute on the orders element
     builder.orders(cafe: coffeeshop.name, date: coffeeshop.date) {
         coffeeshop.orders.each { o ->
@@ -23,6 +27,6 @@ def Message processData(Message message) {
         }
     }
 
-    message.setBody(outputStream.toString('UTF-8'))
+    message.setBody(outputStream)
     return message
 }

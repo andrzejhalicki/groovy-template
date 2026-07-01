@@ -1,4 +1,5 @@
 import com.sap.gateway.ip.core.customdev.util.Message
+import groovy.json.JsonOutput
 import groovy.json.JsonSlurper
 import org.apache.camel.CamelContext
 import org.apache.camel.Exchange
@@ -69,6 +70,7 @@ class CreateJSONSpec extends Specification {
 
         then: 'Espresso has 2 sizes, both price values are Doubles'
         def json = new JsonSlurper().parseText(msg.getBody() as String)
+        //println(JsonOutput.toJson(json))
         def espresso = json.menu.find { it.id == 'HD-01' }
         espresso.name == 'Espresso'
         espresso.sizes.size() == 2
